@@ -1,12 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import 'bootstrap/dist/css/bootstrap.css';
+import Home from './Views/Home';
+import Page404 from './Views/Page404';
+import Solicitud from './Views/Solicitud';
+import Login from './Views/Login';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Profile from './Views/Profile';
+import OP from './Views/PartsOfficer';
+import JA from './Views/AreaBoss';
+import Admin from './Views/Admin';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route exact path="/login">
+          <Login/>
+        </Route>
+        <Route path="/perfil">
+          <Profile/>
+        </Route>
+        <Route path="/oficialiaPartes">
+          <OP/>
+        </Route>
+        <Route path="/jefeArea">
+          <JA/>
+        </Route>
+        <Route path="/admin">
+          <Admin/>
+        </Route>
+        <Route exact path="/solicitud/:type" component={Solicitud}/>
+        <Route ath="*">
+          <Page404/>
+        </Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
