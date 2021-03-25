@@ -8,33 +8,12 @@ import { useEffect, useState } from 'react';
 
 export default function Solicitud(){
     const history = useHistory();
-    let { type } = useParams();
-    const [tipo] = useState(type ==="via-publica" ? publica : privado);
-    const [noStages] = useState(type ==="via-publica" ? Object.keys(publica).length : Object.keys(privado).length);
-
+    let { id } = useParams();
+ 
     const [inputsData, setInputsData] = useState([]);
-    const [stage, setStage] = useState('');
-    const [count, setCount] = useState(0);
-    useEffect(() => {
-        console.log(noStages,tipo,stage,count);
-        if(tipo[stage]) {
-            setInputsData(tipo[stage]);
-        }
-    },[stage]);
-
-    useEffect(() => {
-        const [key] = Object.keys(tipo);
-        setStage(key);
-    },[]);
-
     const changePage = (inputs) => {
-        if(count < noStages) {
-            setStage(Object.keys(tipo)[count + 1]);
-            const n = count + 1;
-            setCount(n);
-        } else {
             console.log('Ya no debo avanzar');
-            axios.post('https://podayderribo-cdmx.herokuapp.com/solicitudes/', {...inputs, tipo:type })
+            axios.post('https://podayderribo-cdmx.herokuapp.com/solicitudes/', {...inputs })
             .then(({response})=>{
 
             })
@@ -42,8 +21,6 @@ export default function Solicitud(){
 
             });
         }
-        console.log(inputs, stage, count,noStages);
-    };
     /*     useEffect(() => {
         const token = window.localStorage.getItem('token');
         if(token) {
@@ -66,7 +43,7 @@ export default function Solicitud(){
     }, []); */
 
     return (
-        <Layout head={`Solicitud en ${type}`}>
+        <Layout head={`Solicitud en `}>
         <Form inputsData={inputsData} submit={changePage} styling="success" textBtn="Siguiente">
         </Form>
         <Link to="/">Volver al inicio</Link> 

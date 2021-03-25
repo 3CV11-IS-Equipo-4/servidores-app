@@ -20,13 +20,19 @@ export default function Navbar({type}){
                     <div>
                         <ul className="nav">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="#">Home</Link>
+                                {/* Agregar el sin rol de el to para solucitudes */}
+                                <Link className="nav-link" to="/oficialiaPartes">Solicitudes</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">Features</Link>
+                                {/* Agregar el sin rol de el to para solucitudes */}
+                                <Link className="nav-link" to="/oficialiaPartes">Solicitudes</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">Pricing</Link>
+                                {/* Agregar el sin rol de el to para solucitudes */}
+                                <Link className="nav-link" to="/jefeArea">Solicitudes</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/Admin">Usuarios</Link>
                             </li>
                         </ul>
                     </div>
