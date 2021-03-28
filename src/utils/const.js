@@ -390,6 +390,70 @@ module.exports = {
         }],
         
     },
+    addUserView:[
+        {
+            label:'Nombre: ',
+            type:'text',
+            placeholder:'Juan',
+            required: true,
+            name: 'nombres',
+        },
+        {
+            label:'Apellido paterno: ',
+            type:'text',
+            placeholder:'Hernandez',
+            required: true,
+            name: 'apellido_paterno',
+        },
+        {
+            label:'Apellido materno: ',
+            type:'text',
+            placeholder:'Ramirez',
+            required: true,
+            name: 'apellido_materno',
+        },
+        {
+            label:'Email: ',
+            type:'email',
+            placeholder:'correoele@domino.com',
+            required: true,
+            name: 'city',
+        },
+        {
+            label:'Contraseña: ',
+            type:'password',
+            placeholder:'',
+            required: true,
+            name: 'password',
+        },
+        {
+            label:'Rol: ',
+            type:'text',
+            placeholder:'Selecciona una opción',
+            required: true,
+            name: 'rol',
+            inputType:'select',
+            items: [{value:'ROP', label:'Recepcionista '}, {value:'Di', label:'Dictaminador'}, {value:'JA', label:'Jefe de area'}]
+        },
+        {
+            label:'Permiso de Administrador: ',
+            type:'text',
+            placeholder:'Selecciona una opción',
+            required: true,
+            name: 'permiso_administrador',
+            inputType:'select',
+            items: [{value:'ROP', label:'Recepcionista '}, {value:'Di', label:'Dictaminador'}, {value:'JA', label:'Jefe de area'}]
+        },
+        {
+            label:'Alcadía: ',
+            type:'text',
+            placeholder:'Selecciona una opción',
+            required: true,
+            name: 'alcaldia',
+            inputType:'select',
+            items: [{value:'alv', label:'Álvaro Obregón'}, {value:'azc', label:'Azcapotzalco'},{value:'ben', label:'Benito Juárez'}, {value:'coy', label:'Coyoacan'},{value:'cua', label:'Cuajimalpa'}, {value:'cuau', label:'Cuautémoc'},{value:'gam', label:'Gustavo A. Madero'}, {value:'iztc', label:'Iztacalco'},{value:'iztp', label:'Iztapalapa'}, {value:'mag', label:'Magdalena Contreras'},{value:'mig', label:'Miguel Hidalgo'}, {value:'mil', label:'Milpa Alta'},{value:'tla', label:'Tláhuac'}, {value:'tlal', label:'Tlalpan'},{value:'ven', label:'Venustiano Carranza'}, {value:'xoc', label:'Xochimilco'}],
+        },
+    ],
     logins:{
         loginEMView: [{
             label:'Email: ',
