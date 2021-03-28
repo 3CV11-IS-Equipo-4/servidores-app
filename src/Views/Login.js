@@ -21,7 +21,7 @@ export default function Home() {
     };
 
     return(
-        <Layout head={`Consultar solicitudes`}>
+        <Layout head={``} type='ciudadano'>
             <Card className="m-5" title="Inicia sesión" styling="flex-row">
 
                 <Form 

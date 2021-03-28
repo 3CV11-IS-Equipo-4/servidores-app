@@ -6,7 +6,7 @@ import img_pi from '../img/arbol.png'
 
 export default function Home() {
     return(
-        <Layout head="Elige tu trámite">
+        <Layout head="Administración de poda de árboles">
             <div className="d-flex w-100 justify-content-around">
             <Link to="login"><Card className="m-5">
                 <img src={img_pi} width="400"></img>
