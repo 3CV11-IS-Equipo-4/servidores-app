@@ -5,7 +5,7 @@ import { logins } from '../utils/const';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-export default function Home() {
+export default function Login() {
     const history = useHistory();
 
     const login = (inputs) => {
