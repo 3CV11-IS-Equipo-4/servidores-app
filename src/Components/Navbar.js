@@ -15,7 +15,7 @@ export default function Navbar({type}){
                 
                 <div className="col-8 title h-100">
                     {type === "ciudadano" ? <div className="col-12 title d-flex justify-content-center h-100">
-                        <h4>Solicitud de poda o derribo de árbol</h4>
+                        <h4></h4>
                     </div> :  
                     <div>
                         <ul className="nav">
@@ -25,14 +25,7 @@ export default function Navbar({type}){
                             </li>
                             <li className="nav-item">
                                 {/* Agregar el sin rol de el to para solucitudes */}
-                                <Link className="nav-link" to="/oficialiaPartes">Solicitudes</Link>
-                            </li>
-                            <li className="nav-item">
-                                {/* Agregar el sin rol de el to para solucitudes */}
-                                <Link className="nav-link" to="/jefeArea">Solicitudes</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/Admin">Usuarios</Link>
+                                <Link className="nav-link" to="/oficialiaPartes">Usuarios</Link>
                             </li>
                         </ul>
                     </div>
