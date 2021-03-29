@@ -25,7 +25,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home success="true"/>
+          <Home />
         </Route>
         <Route exact path="/login">
           <Login/>
@@ -45,7 +45,6 @@ ReactDOM.render(
         <Route path="/admin">
           <Admin/>
         </Route>
-        <Route exact path="/success" component={Success}/>
         <Route exact path="/solicitud/:type" component={Solicitud}/>
         <Route exact path="/logout" component={Logout}/>
         <Route path="*">

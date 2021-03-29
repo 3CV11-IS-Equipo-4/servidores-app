@@ -2,7 +2,6 @@ import logo from '../img/logocdmx.png'
 import "./Navbar.css"
 import payload from '../utils/payload';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 export default function Navbar(){
     const p = payload();
