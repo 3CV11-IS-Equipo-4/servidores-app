@@ -1,9 +1,9 @@
 import Table from '../Components/Table';
 import { tables } from '../utils/const';
-
 import Layout from '../Components/Layout';
+import protect from '../utils/protect';
 
-export default function AreaBoss() {
+function AreaBoss() {
     return(
         <Layout>
             <div className="d-flex justify-content-between w-100 h-100">
@@ -12,3 +12,5 @@ export default function AreaBoss() {
         </Layout>
     );
 }
+
+export default protect(AreaBoss);

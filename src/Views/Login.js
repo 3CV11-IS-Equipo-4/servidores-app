@@ -5,19 +5,25 @@ import { logins } from '../utils/const';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+
 export default function Login() {
     const history = useHistory();
 
     const login = (inputs) => {
         console.log('Login');
-        axios.post('https://podayderribo-cdmx.herokuapp.com/', {...inputs })
-            .then(({response})=>{
+        axios.post('https://poda-api.herokuapp.com/login/usuarios', 
+            {...inputs }
+        )
+            .then(({ data , status})=> {
+                if(status === 200) {
+                    window.localStorage.setItem('token', data.key);
+                    history.push('/success');
+                }
                 // dependiendo del rol redireccionar
             })
-            .catch(e => {
-
+            .catch(error => {
+                console.log('Error', error.message);
             });
-        history.push('jefeArea');
     };
 
     return(

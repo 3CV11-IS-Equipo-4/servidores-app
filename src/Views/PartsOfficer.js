@@ -1,9 +1,9 @@
 import Table from '../Components/Table';
 import { tables } from '../utils/const';
-
+import protect from '../utils/protect';
 import Layout from '../Components/Layout';
 
-export default function PartsOfficer() {
+function PartsOfficer() {
     return(
         <Layout>
             <div className="d-flex justify-content-between w-100 h-100">
@@ -12,3 +12,5 @@ export default function PartsOfficer() {
         </Layout>
     );
 }
+
+export default protect(PartsOfficer);
