@@ -13,7 +13,6 @@ import OP from './Views/PartsOfficer';
 import JA from './Views/AreaBoss';
 import Admin from './Views/Admin';
 import { Redirect } from 'react-router-dom';
-import Success from './Views/Success';
 
 const Logout = () => {
   window.localStorage.removeItem('token');
