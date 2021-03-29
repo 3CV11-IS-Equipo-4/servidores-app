@@ -45,6 +45,9 @@ ReactDOM.render(
         <Route exact path="/admin">
           <Admin/>
         </Route>
+        <Route exact path="/solicitud-esoecifica">
+          <SolicitudDetail/>
+        </Route>
         <Route exact path="/solicitud/:id" component={SolicitudDetail}/>
         <Route exact path="/logout" component={Logout}/>
         <Route path="*">
