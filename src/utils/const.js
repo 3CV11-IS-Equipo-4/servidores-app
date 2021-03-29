@@ -428,11 +428,11 @@ module.exports = {
             },
             {
               Header: 'Tipo de trámite',
-              accessor: 'tipo',
+              accessor: 'modalidad',
             },
             {
                 Header: 'Tipo de solicitud',
-                accessor: 'tipo_servicio',
+                accessor: 'tipo_de_servicio',
             },
             {
                 Header: 'Estado de la solicitud',
@@ -446,11 +446,11 @@ module.exports = {
             },
             {
               Header: 'Tipo de trámite',
-              accessor: 'tipo',
+              accessor: 'modalidad',
             },
             {
                 Header: 'Tipo de solicitud',
-                accessor: 'tipo_servicio',
+                accessor: 'tipo_de_servicio',
             },
             {
                 Header: 'Estado de la solicitud',
@@ -468,8 +468,8 @@ module.exports = {
         ejemploOficialia: [
             {
                 '_id': 'jdjdjdjdjjdjd',
-                tipo: ' Vía publico',
-                'tipo_servicio': 'Poda',
+                modalidad: ' Vía publico',
+                'tipo_de_servicio': 'Poda',
                 estado: 'Recibida',
                 colonia: 'colonia',
                 codigo_postal: '11320'
@@ -482,11 +482,11 @@ module.exports = {
             },
             {
               Header: 'Tipo de trámite',
-              accessor: 'tipo',
+              accessor: 'modalidad',
             },
             {
                 Header: 'Tipo de solicitud',
-                accessor: 'tipo_servicio',
+                accessor: 'tipo_de_servicio',
             },
             {
                 Header: 'Estado de la solicitud',
@@ -508,8 +508,49 @@ module.exports = {
         ejemploJA: [
             {
                 '_id': 'jdjdjdjdjjdjd',
-                tipo: ' Vía publico',
-                'tipo_servicio': 'Poda',
+                modalidad: ' Vía publico',
+                'tipo_de_servicio': 'Poda',
+                estado: 'Recibida',
+                colonia: 'colonia',
+                codigo_postal: '11320',
+                consulta: '<Aquí iria un boton>'
+            }
+        ],
+        dictaminador: [
+            {
+              Header: 'Folio de la solicitud',
+              accessor: '_id', // accessor is the "key" in the data
+            },
+            {
+              Header: 'Tipo de trámite',
+              accessor: 'modalidad',
+            },
+            {
+                Header: 'Tipo de solicitud',
+                accessor: 'tipo_de_servicio',
+            },
+            {
+                Header: 'Estado de la solicitud',
+                accessor: 'estado',
+            },
+            {
+                Header: 'Colonia',
+                accessor: 'colonia',
+            },
+            {
+                Header: 'C.P.',
+                accessor: 'codigo_postal',
+            },
+            {
+                Header: 'Consultar',
+                accessor: 'consulta',
+            },
+        ],
+        ejemploDI: [
+            {
+                '_id': 'jdjdjdjdjjdjd',
+                modalidad: ' Vía publico',
+                'tipo_de_servicio': 'Poda',
                 estado: 'Recibida',
                 colonia: 'colonia',
                 codigo_postal: '11320',
@@ -561,62 +602,62 @@ module.exports = {
         mockData: [{    
             estado:'Enviada',
             '_id':'sj34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'si34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sh34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Poda',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sg34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sf34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Poda',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'se34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sd34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Poda',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sc34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sb34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sa34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         }],
         
     },
