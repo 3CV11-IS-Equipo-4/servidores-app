@@ -513,9 +513,17 @@ module.exports = {
                 accessor: 'codigo_postal',
             },
             {
-                Header: 'Consultar',
-                accessor: 'consulta',
+                Header: 'Consulta',
+                accessor: 'ver_sol',
             },
+            {
+                Header: 'Aceptar',
+                accessor: 'edi_sol',
+            },
+            {
+                Header: 'Denegar',
+                accessor: 'den_sol',
+            }
         ],
         ejemploJA: [
             {
@@ -554,7 +562,7 @@ module.exports = {
                 accessor: 'codigo_postal',
             },
             {
-                Header: 'Ver',
+                Header: 'Consulta',
                 accessor: 'ver_sol',
             },
             {

@@ -18,13 +18,13 @@ export default function Table({cols, datos, aceptar, denegar, permisoUser, activ
   const getCell = (cell, row) =>{
     if(cell.column.id === 'edi_sol'){ 
       return <span className="material-icons" onClick={(e) => {aceptar(row.original)}} style={{color: "green"}}> task </span>
+    } else if(cell.column.id === 'den_sol'){
+      return <span className="material-icons" onClick={(e) => {denegar(row.original)}} style={{color: "red"}}> do_not_disturb_alt </span>
     } else if(cell.column.id === 'ver_sol'){
       return <Link to={`/solicitud/${row.original._id}`}>
-        <span className="material-icons" > edit </span>
+        <span className="material-icons" > remove_red_eye </span>
       </Link>
-    } else if(cell.column.id === 'den_sol'){
-      return <span className="material-icons" onClick={denegar} style={{color: "red"}}> do_not_disturb_alt </span>
-    } else if(cell.column.id === 'ver_user'){
+    }  else if(cell.column.id === 'ver_user'){
       return <Link to={`/user/${row.original._id}`}>
         <span className="material-icons" style={{color: "black"}}> remove_red_eye </span>
       </Link>

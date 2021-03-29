@@ -7,28 +7,35 @@ import axios from 'axios';
 
 function PartsOfficer() {
     const [data, setData] = useState(null);
-    const permisoUser = ({_id,permiso_administrador}) => {
+    const aceptar = ({_id}) => {
+        console.log(_id);
         const token = window.localStorage.getItem('token')
         const config = {
             headers:{
                Authorization: `Bearer ${token}` 
             }
         }
-        axios.patch('https://poda-api.herokuapp.com/usuarios/' + _id, { permiso_administrador: !permiso_administrador}, config)
+        axios.patch('https://poda-api.herokuapp.com/solicitudes/' + _id, { aceptada: true }, config)
             .then(({data, status})=>{
                 window.location.reload();
+            })
+            .catch(error => {
+                alert( error.response.data.error);
             });
     };
-    const activoUser = ({_id,usuario_activo}) => {
+    const denegar = ({_id}) => {
         const token = window.localStorage.getItem('token')
         const config = {
             headers:{
                Authorization: `Bearer ${token}` 
             }
         }
-        axios.patch('https://poda-api.herokuapp.com/usuarios/' + _id, { usuario_activo: !usuario_activo}, config)
+        axios.patch('https://poda-api.herokuapp.com/solicitudes/' + _id, { aceptada: false }, config)
             .then(({data, status})=>{
                 window.location.reload();
+            })
+            .catch(error => {
+                alert( error.response.data.error);
             });
     };
     const getData = () => {
@@ -38,31 +45,23 @@ function PartsOfficer() {
                Authorization: `Bearer ${token}` 
             }
         }
-        axios.get('https://poda-api.herokuapp.com/usuarios/',config)
-            .then(({data, status})=>{
-                if(status === 200) {
-                    setData(data.usuarios.map(a=>a));
-                }
-            });
-    };
-    useEffect(() => {
-        const token = window.localStorage.getItem('token')
-        const config = {
-            headers:{
-               Authorization: `Bearer ${token}` 
-            }
-        }
         axios.get('https://poda-api.herokuapp.com/solicitudes/usuarios/',config)
             .then(({data, status})=>{
                 if(status === 200) {
-                    setData(data.solicitudes);
+                    setData(data.solicitudes.map(a=>a));
                 }
+            })
+            .catch(error => {
+                alert( error.response.data.error);
             });
+    };
+    useEffect(() => {
+        getData();
     },[]);
     return(
         <Layout>
             {data ? <div className="d-flex justify-content-between w-100 h-100">
-                <Table cols={tables.oficialiaPartes} datos={data}></Table>
+                <Table cols={tables.oficialiaPartes} datos={data} aceptar={aceptar} denegar={denegar}></Table>
             </div>: ''}
         </Layout>
     );

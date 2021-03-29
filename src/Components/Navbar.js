@@ -42,7 +42,7 @@ export default function Navbar(){
                     <div className="d-flex justify-content-around">
                         <ul className="nav">
                         <li className="nav-item"><Link className="nav-link" to="/">
-                            Home
+                        {p.sub.rol}
                         </Link></li>
                             {
                                 selectSolicitudes(p.sub.rol)
