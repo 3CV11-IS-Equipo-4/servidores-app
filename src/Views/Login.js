@@ -17,7 +17,7 @@ export default function Login() {
             .then(({ data , status})=> {
                 if(status === 200) {
                     window.localStorage.setItem('token', data.key);
-                    history.push('/success');
+                    history.push('/');
                 }
                 // dependiendo del rol redireccionar
             })

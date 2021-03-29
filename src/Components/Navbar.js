@@ -2,6 +2,7 @@ import logo from '../img/logocdmx.png'
 import "./Navbar.css"
 import payload from '../utils/payload';
 import { Link } from 'react-router-dom';
+import Button from '../Components/Button';
 
 export default function Navbar(){
     const p = payload();
@@ -38,7 +39,7 @@ export default function Navbar(){
                     { !p ? <div className="col-12 title d-flex justify-content-center h-100">
                         <h4>Administración de solicitudes de poda</h4>
                     </div> :  
-                    <div>
+                    <div className="d-flex justify-content-around">
                         <ul className="nav">
                         <li className="nav-item"><Link className="nav-link" to="/">
                             Home
@@ -49,6 +50,14 @@ export default function Navbar(){
                             {p.sub.permiso_administrador ? <li className="nav-item">
                                 <Link className="nav-link" to="/Admin">Usuarios</Link>
                             </li>:''}
+                            
+                        </ul>
+                        <ul className="nav">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/logout">
+                            Cerrar Sesión
+                        </Link>
+                        </li>
                         </ul>
                     </div>
                     }

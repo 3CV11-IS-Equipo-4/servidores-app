@@ -442,7 +442,7 @@ module.exports = {
         oficialiaPartes: [
             {
               Header: 'Folio de la solicitud',
-              accessor: '_id', // accessor is the "key" in the data
+              accessor: 'folio', // accessor is the "key" in the data
             },
             {
               Header: 'Tipo de trámite',
@@ -458,12 +458,24 @@ module.exports = {
             },
             {
                 Header: 'Colonia',
-                accessor: 'colonia',
+                accessor: 'colonia_arbol',
             },
             {
-                Header: 'C.P.',
-                accessor: 'codigo_postal',
+                Header: 'Alcaldia',
+                accessor: 'alcaldia_arbol',
             },
+            {
+                Header: 'Ver',
+                accessor: 'ver_sol',
+            },
+            {
+                Header: 'Aceptar',
+                accessor: 'edi_sol',
+            },
+            {
+                Header: 'Denegar',
+                accessor: 'den_sol',
+            }
         ],
         ejemploOficialia: [
             {
@@ -542,9 +554,17 @@ module.exports = {
                 accessor: 'codigo_postal',
             },
             {
-                Header: 'Consultar',
-                accessor: 'consulta',
+                Header: 'Ver',
+                accessor: 'ver_sol',
             },
+            {
+                Header: 'Aceptar',
+                accessor: 'edi_sol',
+            },
+            {
+                Header: 'Denegar',
+                accessor: 'den_sol',
+            }
         ],
         ejemploDI: [
             {
@@ -586,10 +606,32 @@ module.exports = {
                 Header: 'Admin',
                 accessor: 'permiso_administrador',
             },
-            
+            {
+                Header: 'Ver',
+                accessor: 'ver_user',
+            },
+            {
+                Header: 'Aceptar',
+                accessor: 'edi_user',
+            },
+            {
+                Header: 'Denegar',
+                accessor: 'den_user',
+            }
         ],
         ejemploAdmin: [
+            {   
+                _id:'23e1ed431rf43543',
+                'rol': 'JA',
+                nombres: 'Gumercindo',
+                apellido_paterno: 'Perez',
+                apellido_materno: 'Juarez',
+                alcaldia: 'Alcaldia',
+                email: 'correo@dominio.com',
+                permiso_administrador: 'Nel'
+            },
             {
+                _id:'23e1ed431rf4eff3',
                 'rol': 'JA',
                 nombres: 'Gumercindo',
                 apellido_paterno: 'Perez',

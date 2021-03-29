@@ -59,7 +59,7 @@ export default function Form({submit, inputsData, textBtn, children, styling, st
                 }
                 {children}
             </div>
-            <Button type="submit" styling={styling} text={textBtn}></Button>
+            <Button type="submit" styling={styling} className="mt-5 mb-3" text={textBtn}></Button>
         </form>
     );
 };
