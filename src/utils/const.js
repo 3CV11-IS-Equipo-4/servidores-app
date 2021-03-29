@@ -465,7 +465,7 @@ module.exports = {
                 accessor: 'alcaldia_arbol',
             },
             {
-                Header: 'Ver',
+                Header: 'Editar',
                 accessor: 'ver_sol',
             },
             {
@@ -611,13 +611,9 @@ module.exports = {
                 accessor: 'ver_user',
             },
             {
-                Header: 'Aceptar',
-                accessor: 'edi_user',
+                Header: 'Activo',
+                accessor: 'usuario_activo',
             },
-            {
-                Header: 'Denegar',
-                accessor: 'den_user',
-            }
         ],
         ejemploAdmin: [
             {   

@@ -14,6 +14,7 @@ import JA from './Views/AreaBoss';
 import Admin from './Views/Admin';
 import { Redirect } from 'react-router-dom';
 import SolicitudDetail from './Views/SolicitudDetail';
+import User from './Views/User';
 
 const Logout = () => {
   window.localStorage.removeItem('token');
@@ -46,6 +47,7 @@ ReactDOM.render(
           <Admin/>
         </Route>
         <Route exact path="/solicitud/:id" component={SolicitudDetail}/>
+        <Route exact path="/user/:id" component={User}/>
         <Route exact path="/logout" component={Logout}/>
         <Route path="*">
           <Page404/>

@@ -7,7 +7,7 @@ import { publica, privado } from '../utils/const';
 import { useEffect, useState } from 'react';
 
 export default function Solicitud(){
-    const history = useHistory();
+
     let { id } = useParams();
  
     const [inputsData, setInputsData] = useState([]);

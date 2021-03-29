@@ -4,24 +4,25 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 
-function SolicitudDetail() {
+function User() {
     const { id } = useParams();
     const [data, setData] = useState(null);
     useEffect(() => {
         const token = window.localStorage.getItem('token')
         const config = {
             headers:{
-               Authorization: `Bearer ${token}` 
+               Authorization: `Bearer ${token}`,
             }
         }
-        axios.get('https://poda-api.herokuapp.com/solicitudes/ciudadanos/',config)
+        axios.get('https://poda-api.herokuapp.com/usuarios/' + id, config)
             .then(({data, status})=>{
                 if(status === 200) {
                     setData(data);
-                    console.log('data', data)
+                    console.log('data', data);
                 }
             });
     }, []);
+    
     return(
         <Layout head={id}>
             <div>
@@ -32,7 +33,7 @@ function SolicitudDetail() {
                         Nombre(s):{data.nombres}
                         </div>
                         <div class="col">
-                        Apellido Paterno: {data.apellito_paterno}
+                        Apellido Paterno: {data.apellido_paterno}
                         </div>
                         
                     </div>
@@ -43,4 +44,4 @@ function SolicitudDetail() {
     );
 }
 
-export default protect(SolicitudDetail);
+export default protect(User);
