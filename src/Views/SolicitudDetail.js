@@ -7,7 +7,7 @@ import { consultaSolicitud } from '../utils/const'
 
 function SolicitudDetail() {
     const { id } = useParams();
-    const [data, setData] = useState(consultaSolicitud);
+    const [data, setData] = useState(null);
     useEffect(() => {
         const token = window.localStorage.getItem('token')
         const config = {
@@ -15,7 +15,7 @@ function SolicitudDetail() {
                Authorization: `Bearer ${token}` 
             }
         }
-        axios.get('https://poda-api.herokuapp.com/solicitudes/ciudadanos/',config)
+        axios.get('https://poda-api.herokuapp.com/solicitudes/'+ id,config)
             .then(({data, status})=>{
                 if(status === 200) {
                     setData(data);
@@ -73,7 +73,8 @@ function SolicitudDetail() {
                             <p className="fw-bold">Fotografías:</p>
                             <div className="d-flex justify-content-between flex-wrap">
                                 {data.fotos.map(item => 
-                                    <div className="col-4">{item}</div>
+                                    <div className="col-4">
+                                        <img src={item} className="img-fluid"/></div>
                                     )}
                             </div>
                         </div>
@@ -83,10 +84,16 @@ function SolicitudDetail() {
                         <div className="mb-4 mt-3">
                         <h3 className="mb-3">Datos de solicitud privada {data.modalidad}</h3>
                         <div className="d-flex justify-content-between flex-wrap">
-                            <div className="col-8">Comprobante de domicilio</div>
-                            <div className="col-8">{data.privada.comprobante_domicilio}</div>
-                            <div className="col-8">Comprobante de propiedad</div>
-                            <div className="col-8">{data.privada.comprobante_propiedad}</div>
+                            <div className="col-12">Comprobante de domicilio</div>
+                            {data.privada.comprobante_domicilio.map(item => 
+                                    <div className="col-4">
+                                        <img src={item} className="img-fluid"/></div>
+                                    )}
+                            <div className="col-12">Comprobante de propiedad</div>
+                            {data.privada.comprobante_propiedad.map(item => 
+                                    <div className="col-4">
+                                        <img src={item} className="img-fluid"/></div>
+                                    )}
                         </div>
                         </div>
                         {data.privada.tipo_privada==="construccion" ? 
@@ -94,11 +101,20 @@ function SolicitudDetail() {
                                 <h3 className="mb-3">Datos de solicitud por construcción</h3>
                                 <div className="d-flex justify-content-between flex-wrap">
                                     <div className="col-8">Documento de registro</div>
-                                    <div className="col-8">foto 1</div>
+                                    {data.privada.construccion.documento_registro.map(item => 
+                                    <div className="col-4">
+                                        <img src={item} className="img-fluid"/></div>
+                                    )}
                                     <div className="col-8">Documento de planos</div>
-                                    <div className="col-8">foto 1</div>
+                                    {data.privada.construccion.documento_planos.map(item => 
+                                    <div className="col-4">
+                                        <img src={item} className="img-fluid"/></div>
+                                    )}
                                     <div className="col-8">Documento de declaratoria</div>
-                                    <div className="col-8">foto 1</div>
+                                    {data.privada.construccion.documento_declaratoria.map(item => 
+                                    <div className="col-4">
+                                        <img src={item} className="img-fluid"/></div>
+                                    )}
                                 </div>
                             </div>
                             : ""}
@@ -107,7 +123,7 @@ function SolicitudDetail() {
                                 <h3 className="mb-3">Datos de solicitud por riesgo</h3>
                                 <div className="d-flex justify-content-between flex-wrap">
                                     <div className="col-8">Documento de dictamen de riesgo</div>
-                                    <div className="col-8">foto 1</div>
+                                    <div className="col-8"><img src={data.privada.riesgo.documento_dictamen_riesgo} className="img-fluid"/></div>
                                 </div>
                             </div>
                         : ""}
