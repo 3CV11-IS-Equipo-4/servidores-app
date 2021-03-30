@@ -1,11 +1,11 @@
 .bar{
     background-color: #1bb600;
     padding: 0;
-    height: 6rem;
 }
 
 .conter{
     padding: 0;
+    background-color: #1bb600;
 
 }
 
@@ -31,4 +31,5 @@
 
 .nav {
     justify-content: flex-start;
+    font-size: larger;
 }

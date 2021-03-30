@@ -1,459 +1,4 @@
 module.exports = {
-    privado: {
-        citizenDataView: [
-            {
-                label:'Nombre: ',
-                type:'text',
-                placeholder:'Mario',
-                required: true,
-                name: 'nombres',
-            },
-            {
-                label:'Apellido Paterno: ',
-                type:'text',
-                placeholder:'Garcia',
-                required: true,
-                name: 'apellido_paterno',
-            },
-            {
-                label:'Apellido Materno: ',
-                type:'text',
-                placeholder:'Juarez',
-                required: true,
-                name: 'apellido_materno',
-            },
-            {
-                label:'Calle: ',
-                type:'text',
-                placeholder:'Laguna de San Cristobal',
-                required: true,
-                name: 'calle',
-            },
-            {
-                label:'Número Exterior: ',
-                type:'text',
-                placeholder:'42',
-                required: true,
-                name: 'numero_exterior',
-            },
-            {
-                label:'Número Interior: ',
-                type:'text',
-                placeholder:'54',
-                required: true,
-                name: 'numero_interior',
-            },
-            {
-                label:'C. P.: ',
-                type:'text',
-                placeholder:'11320',
-                required: true,
-                name: 'codigo_postal',
-            },
-            {
-                label:'Alcadía: ',
-                type:'text',
-                placeholder:'Selecciona una opción',
-                required: true,
-                name: 'alcaldia',
-                inputType:'select',
-                items: [{value:'alv', label:'Álvaro Obregón'}, {value:'azc', label:'Azcapotzalco'},{value:'ben', label:'Benito Juárez'}, {value:'coy', label:'Coyoacan'},{value:'cua', label:'Cuajimalpa'}, {value:'cuau', label:'Cuautémoc'},{value:'gam', label:'Gustavo A. Madero'}, {value:'iztc', label:'Iztacalco'},{value:'iztp', label:'Iztapalapa'}, {value:'mag', label:'Magdalena Contreras'},{value:'mig', label:'Miguel Hidalgo'}, {value:'mil', label:'Milpa Alta'},{value:'tla', label:'Tláhuac'}, {value:'tlal', label:'Tlalpan'},{value:'ven', label:'Venustiano Carranza'}, {value:'xoc', label:'Xochimilco'}],
-            },
-            {
-                label:'Colonia: ',
-                type:'text',
-                placeholder:'Selecciona una opción: ',
-                required: true,
-                name: 'colonia',
-            },
-            {
-                label:'Teléfono: ',
-                type:'text',
-                placeholder:'0000000000',
-                required: true,
-                name: 'numero_telefono',
-            },
-            {
-                label:'Correo electrónico: ',
-                type:'text',
-                placeholder:'correoele@domino.com',
-                required: true,
-                name: 'email',
-            },
-            {
-                label:'Documento de identificación',
-                type:'text',
-                placeholder:'INE',
-                required: false,
-                inputType: 'photos',
-                name: 'documento_identificacion_oficial',
-            },
-        ],
-        privatDataView: [
-            {
-                label:'Tipo de solicitud: ',
-                type:'text',
-                placeholder:'Selecciona una opción',
-                required: true,
-                name: 'solicitud',
-                inputType:'select',
-                items: [{value:'Topiara', label:'Poda o derribo por ornamentación'}, {value:'Construcción', label:'Poda o derribo por construcción, remodelación o amplación'},{value:'Riesgo', label:'Derribo por riesgo '}],
-            },
-            {
-                label:'Comprobante de propiedad',
-                type:'',
-                placeholder:'comprobante de propiedad',
-                required: true,
-                name: 'comprobante_propiedad',
-            },
-            {
-                label:'Comprobante de domicilio',
-                type:'',
-                placeholder:'comprobante de domicilio',
-                required: true,
-                name: 'comprobante_domicilio',
-            },
-        ],
-        riesgoDataView: [
-            {
-                label:'Dictamen técnico',
-                type:'',
-                placeholder:'Docuemento pdf',
-                required: false,
-                inputType: 'photos',
-                name: 'documento_dictamen_riesgo',
-            },
-        ],
-        constructionDataView: [
-            {
-                label:'Registro de Manifestación de Construcción de Tipo A, B o C o Licencia de Construcción Especial con sello de la Alcaldía.',
-                type:'',
-                placeholder:'Docuemento pdf',
-                required: true,
-                name: 'documento_registro',
-            },
-            {
-                label:'Declaratoria ambiental',
-                type:'',
-                placeholder:'Documento pdf',
-                required: true,
-                name: 'documento_declaratoria',
-            },
-            {
-                label:'Planos arquitectonicos',
-                type:'',
-                placeholder:'Documento pdf',
-                required: true,
-                name: 'documento_planos',
-            },
-        ],
-        treeDataView: [{
-            label:'Sobre calle: ',
-            type:'text',
-            placeholder:'Mar mediterraneo',
-            required: true,
-            name: 'calle_arbol',
-        },
-        {
-            label:' calle',
-            type:'text',
-            placeholder:'Mar rojo',
-            required: true,
-            name: 'calle_adyacente_1',
-        },
-        {
-            label:'Y calle',
-            type:'text',
-            placeholder:'Mar rojo',
-            required: true,
-            name: 'calle_adyacente_2',
-        },
-        {
-            label:'C. P.: ',
-            type:'text',
-            placeholder:'11320',
-            required: true,
-            name: 'cp',
-        },
-        {
-            label:'Alcadía: ',
-            type:'text',
-            placeholder:'Selecciona una opción',
-            required: true,
-            name: 'alcaldia_arbol',
-            inputType:'select',
-            items: [{value:'alv', label:'Álvaro Obregón'}, {value:'azc', label:'Azcapotzalco'},{value:'ben', label:'Benito Juárez'}, {value:'coy', label:'Coyoacan'},{value:'cua', label:'Cuajimalpa'}, {value:'cuau', label:'Cuautémoc'},{value:'gam', label:'Gustavo A. Madero'}, {value:'iztc', label:'Iztacalco'},{value:'iztp', label:'Iztapalapa'}, {value:'mag', label:'Magdalena Contreras'},{value:'mig', label:'Miguel Hidalgo'}, {value:'mil', label:'Milpa Alta'},{value:'tla', label:'Tláhuac'}, {value:'tlal', label:'Tlalpan'},{value:'ven', label:'Venustiano Carranza'}, {value:'xoc', label:'Xochimilco'}],
-        },
-        {
-            label:'Colonia: ',
-            type:'text',
-            placeholder:'Selecciona una opción: ',
-            required: true,
-            name: 'colonia_arbol',
-        }, 
-        {
-            label:'Referencias: ',
-            type:'textArea',
-            placeholder:'',
-            required: true,
-            name: 'referencias',
-        },
-        {
-            label:'Motivo: ',
-            type:'textArea',
-            placeholder:'',
-            required: true,
-            name: 'motivos',
-        },
-        {
-            label:'Fotografias del árbol',
-            type:'',
-            placeholder:'Fotografias',
-            required: false,
-            inputType: 'photos',
-            name: 'fotos',
-        },
-        {
-            label:'Tipo de servicio: ',
-            type:'text',
-            placeholder:'Selecciona una opción: ',
-            required: false,
-            inputType: 'photos',
-            name: 'colonia_arbol',
-            items: [{value:'Poda', label:'Poda '}, {value:'Derribo', label:'Derribo'}],
-        }    
-    ],
-    },
-    publica: {
-        citizenDataView: [
-            {
-                label:'Nombre: ',
-                type:'text',
-                placeholder:'Mario',
-                required: true,
-                name: 'nombres',
-            },
-            {
-                label:'Apellido Paterno: ',
-                type:'text',
-                placeholder:'Garcia',
-                required: true,
-                name: 'apellido_paterno',
-            },
-            {
-                label:'Apellido Materno: ',
-                type:'text',
-                placeholder:'Juarez',
-                required: true,
-                name: 'apellido_materno',
-            },
-            {
-                label:'Calle: ',
-                type:'text',
-                placeholder:'Laguna de San Cristobal',
-                required: true,
-                name: 'calle',
-            },
-            {
-                label:'Número Exterior: ',
-                type:'text',
-                placeholder:'42',
-                required: true,
-                name: 'numero_exterior',
-            },
-            {
-                label:'Número Interior: ',
-                type:'text',
-                placeholder:'54',
-                required: true,
-                name: 'numero_interior',
-            },
-            {
-                label:'C. P.: ',
-                type:'text',
-                placeholder:'11320',
-                required: true,
-                name: 'codigo_postal',
-            },
-            {
-                label:'Alcadía: ',
-                type:'text',
-                placeholder:'Selecciona una opción',
-                required: true,
-                name: 'alcaldia',
-                inputType:'select',
-                items: [{value:'alv', label:'Álvaro Obregón'}, {value:'azc', label:'Azcapotzalco'},{value:'ben', label:'Benito Juárez'}, {value:'coy', label:'Coyoacan'},{value:'cua', label:'Cuajimalpa'}, {value:'cuau', label:'Cuautémoc'},{value:'gam', label:'Gustavo A. Madero'}, {value:'iztc', label:'Iztacalco'},{value:'iztp', label:'Iztapalapa'}, {value:'mag', label:'Magdalena Contreras'},{value:'mig', label:'Miguel Hidalgo'}, {value:'mil', label:'Milpa Alta'},{value:'tla', label:'Tláhuac'}, {value:'tlal', label:'Tlalpan'},{value:'ven', label:'Venustiano Carranza'}, {value:'xoc', label:'Xochimilco'}],
-            },
-            {
-                label:'Colonia: ',
-                type:'text',
-                placeholder:'Selecciona una opción: ',
-                required: true,
-                name: 'colonia',
-            },
-            {
-                label:'Teléfono: ',
-                type:'text',
-                placeholder:'0000000000',
-                required: true,
-                name: 'numero_telefono',
-            },
-            {
-                label:'Correo electrónico: ',
-                type:'text',
-                placeholder:'correoele@domino.com',
-                required: true,
-                name: 'email',
-            },
-            {
-                label:'Documento de identificación',
-                type:'text',
-                placeholder:'INE',
-                required: false,
-                inputType: 'photos',
-                name: 'documento_identificacion_oficial',
-            },
-        ],
-        treeDataView: [{
-            label:'Sobre calle: ',
-            type:'text',
-            placeholder:'Mar mediterraneo',
-            required: true,
-            name: 'calle_arbol',
-        },
-        {
-            label:' calle',
-            type:'text',
-            placeholder:'Mar rojo',
-            required: true,
-            name: 'calle_adyacente_1',
-        },
-        {
-            label:'Y calle',
-            type:'text',
-            placeholder:'Mar rojo',
-            required: true,
-            name: 'calle_adyacente_2',
-        },
-        {
-            label:'C. P.: ',
-            type:'text',
-            placeholder:'11320',
-            required: true,
-            name: 'cp',
-        },
-        {
-            label:'Alcadía: ',
-            type:'text',
-            placeholder:'Selecciona una opción',
-            required: true,
-            name: 'alcaldia_arbol',
-            inputType:'select',
-            items: [{value:'alv', label:'Álvaro Obregón'}, {value:'azc', label:'Azcapotzalco'},{value:'ben', label:'Benito Juárez'}, {value:'coy', label:'Coyoacan'},{value:'cua', label:'Cuajimalpa'}, {value:'cuau', label:'Cuautémoc'},{value:'gam', label:'Gustavo A. Madero'}, {value:'iztc', label:'Iztacalco'},{value:'iztp', label:'Iztapalapa'}, {value:'mag', label:'Magdalena Contreras'},{value:'mig', label:'Miguel Hidalgo'}, {value:'mil', label:'Milpa Alta'},{value:'tla', label:'Tláhuac'}, {value:'tlal', label:'Tlalpan'},{value:'ven', label:'Venustiano Carranza'}, {value:'xoc', label:'Xochimilco'}],
-        },
-        {
-            label:'Colonia: ',
-            type:'text',
-            placeholder:'Selecciona una opción: ',
-            required: true,
-            name: 'colonia_arbol',
-        }, 
-        {
-            label:'Referencias: ',
-            type:'textArea',
-            placeholder:'',
-            required: true,
-            name: 'referencias',
-        },
-        {
-            label:'Motivo: ',
-            type:'textArea',
-            placeholder:'',
-            required: true,
-            name: 'motivos',
-        },
-        {
-            label:'Fotografias del árbol',
-            type:'',
-            placeholder:'Fotografias',
-            required: false,
-            inputType: 'photos',
-            name: 'fotos',
-        },{
-            label:'Tipo de servicio: ',
-            type:'text',
-            placeholder:'Selecciona una opción: ',
-            required: false,
-            inputType: 'photos',
-            name: 'colonia_arbol',
-            items: [{value:'Poda', label:'Poda '}, {value:'Derribo', label:'Derribo'}],
-        }],
-        
-    },
-    addUserView:[
-        {
-            label:'Nombre: ',
-            type:'text',
-            placeholder:'Juan',
-            required: true,
-            name: 'nombres',
-        },
-        {
-            label:'Apellido paterno: ',
-            type:'text',
-            placeholder:'Hernandez',
-            required: true,
-            name: 'apellido_paterno',
-        },
-        {
-            label:'Apellido materno: ',
-            type:'text',
-            placeholder:'Ramirez',
-            required: true,
-            name: 'apellido_materno',
-        },
-        {
-            label:'Email: ',
-            type:'email',
-            placeholder:'correoele@domino.com',
-            required: true,
-            name: 'city',
-        },
-        {
-            label:'Contraseña: ',
-            type:'password',
-            placeholder:'',
-            required: true,
-            name: 'password',
-        },
-        {
-            label:'Rol: ',
-            type:'text',
-            placeholder:'Selecciona una opción',
-            required: true,
-            name: 'rol',
-            inputType:'select',
-            items: [{value:'ROP', label:'Recepcionista '}, {value:'Di', label:'Dictaminador'}, {value:'JA', label:'Jefe de area'}]
-        },
-        {
-            label:'Permiso de Administrador: ',
-            type:'text',
-            placeholder:'Selecciona una opción',
-            required: true,
-            name: 'permiso_administrador',
-            inputType:'select',
-            items: [{value:'ROP', label:'Recepcionista '}, {value:'Di', label:'Dictaminador'}, {value:'JA', label:'Jefe de area'}]
-        },
-        {
-            label:'Alcadía: ',
-            type:'text',
-            placeholder:'Selecciona una opción',
-            required: true,
-            name: 'alcaldia',
-            inputType:'select',
-            items: [{value:'alv', label:'Álvaro Obregón'}, {value:'azc', label:'Azcapotzalco'},{value:'ben', label:'Benito Juárez'}, {value:'coy', label:'Coyoacan'},{value:'cua', label:'Cuajimalpa'}, {value:'cuau', label:'Cuautémoc'},{value:'gam', label:'Gustavo A. Madero'}, {value:'iztc', label:'Iztacalco'},{value:'iztp', label:'Iztapalapa'}, {value:'mag', label:'Magdalena Contreras'},{value:'mig', label:'Miguel Hidalgo'}, {value:'mil', label:'Milpa Alta'},{value:'tla', label:'Tláhuac'}, {value:'tlal', label:'Tlalpan'},{value:'ven', label:'Venustiano Carranza'}, {value:'xoc', label:'Xochimilco'}],
-        },
-    ],
     logins:{
         loginEMView: [{
             label:'Email: ',
@@ -488,15 +33,15 @@ module.exports = {
         estadoSolicitud: [
             {
               Header: 'Folio de la solicitud',
-              accessor: '_id', // accessor is the "key" in the data
+              accessor: 'folio', // accessor is the "key" in the data
             },
             {
               Header: 'Tipo de trámite',
-              accessor: 'tipo',
+              accessor: 'modalidad',
             },
             {
                 Header: 'Tipo de solicitud',
-                accessor: 'tipo_servicio',
+                accessor: 'tipo_de_servicio',
             },
             {
                 Header: 'Estado de la solicitud',
@@ -506,15 +51,15 @@ module.exports = {
         oficialiaPartes: [
             {
               Header: 'Folio de la solicitud',
-              accessor: '_id', // accessor is the "key" in the data
+              accessor: 'folio', // accessor is the "key" in the data
             },
             {
               Header: 'Tipo de trámite',
-              accessor: 'tipo',
+              accessor: 'modalidad',
             },
             {
                 Header: 'Tipo de solicitud',
-                accessor: 'tipo_servicio',
+                accessor: 'tipo_de_servicio',
             },
             {
                 Header: 'Estado de la solicitud',
@@ -522,18 +67,30 @@ module.exports = {
             },
             {
                 Header: 'Colonia',
-                accessor: 'colonia',
+                accessor: 'colonia_arbol',
             },
             {
-                Header: 'C.P.',
-                accessor: 'codigo_postal',
+                Header: 'Alcaldia',
+                accessor: 'alcaldia_arbol',
             },
+            {
+                Header: 'Editar',
+                accessor: 'ver_sol',
+            },
+            {
+                Header: 'Aceptar',
+                accessor: 'edi_sol',
+            },
+            {
+                Header: 'Denegar',
+                accessor: 'den_sol',
+            }
         ],
         ejemploOficialia: [
             {
                 '_id': 'jdjdjdjdjjdjd',
-                tipo: ' Vía publico',
-                'tipo_servicio': 'Poda',
+                modalidad: ' Vía publico',
+                'tipo_de_servicio': 'Poda',
                 estado: 'Recibida',
                 colonia: 'colonia',
                 codigo_postal: '11320'
@@ -542,15 +99,15 @@ module.exports = {
         jefeArea: [
             {
               Header: 'Folio de la solicitud',
-              accessor: '_id', // accessor is the "key" in the data
+              accessor: 'folio', // accessor is the "key" in the data
             },
             {
               Header: 'Tipo de trámite',
-              accessor: 'tipo',
+              accessor: 'modalidad',
             },
             {
                 Header: 'Tipo de solicitud',
-                accessor: 'tipo_servicio',
+                accessor: 'tipo_de_servicio',
             },
             {
                 Header: 'Estado de la solicitud',
@@ -558,22 +115,79 @@ module.exports = {
             },
             {
                 Header: 'Colonia',
-                accessor: 'colonia',
+                accessor: 'colonia_arbol',
             },
             {
-                Header: 'C.P.',
-                accessor: 'codigo_postal',
+                Header: 'Alcaldía',
+                accessor: 'alcaldia_arbol',
             },
             {
-                Header: 'Consultar',
-                accessor: 'consulta',
+                Header: 'Consulta',
+                accessor: 'ver_sol',
             },
+            {
+                Header: 'Aceptar',
+                accessor: 'edi_sol',
+            },
+            {
+                Header: 'Denegar',
+                accessor: 'den_sol',
+            }
         ],
         ejemploJA: [
             {
                 '_id': 'jdjdjdjdjjdjd',
-                tipo: ' Vía publico',
-                'tipo_servicio': 'Poda',
+                modalidad: ' Vía publico',
+                'tipo_de_servicio': 'Poda',
+                estado: 'Recibida',
+                colonia: 'colonia',
+                codigo_postal: '11320',
+                consulta: '<Aquí iria un boton>'
+            }
+        ],
+        dictaminador: [
+            {
+              Header: 'Folio de la solicitud',
+              accessor: 'folio', // accessor is the "key" in the data
+            },
+            {
+              Header: 'Tipo de trámite',
+              accessor: 'modalidad',
+            },
+            {
+                Header: 'Tipo de solicitud',
+                accessor: 'tipo_de_servicio',
+            },
+            {
+                Header: 'Estado de la solicitud',
+                accessor: 'estado',
+            },
+            {
+                Header: 'Colonia',
+                accessor: 'colonia_arbol',
+            },
+            {
+                Header: 'Alcaldía',
+                accessor: 'alcaldia_arbol',
+            },
+            {
+                Header: 'Consulta',
+                accessor: 'ver_sol',
+            },
+            {
+                Header: 'Aceptar',
+                accessor: 'edi_sol',
+            },
+            {
+                Header: 'Denegar',
+                accessor: 'den_sol',
+            }
+        ],
+        ejemploDI: [
+            {
+                '_id': 'jdjdjdjdjjdjd',
+                modalidad: ' Vía publico',
+                'tipo_de_servicio': 'Poda',
                 estado: 'Recibida',
                 colonia: 'colonia',
                 codigo_postal: '11320',
@@ -609,10 +223,28 @@ module.exports = {
                 Header: 'Admin',
                 accessor: 'permiso_administrador',
             },
-            
+            {
+                Header: 'Ver',
+                accessor: 'ver_user',
+            },
+            {
+                Header: 'Activo',
+                accessor: 'usuario_activo',
+            },
         ],
         ejemploAdmin: [
+            {   
+                _id:'23e1ed431rf43543',
+                'rol': 'JA',
+                nombres: 'Gumercindo',
+                apellido_paterno: 'Perez',
+                apellido_materno: 'Juarez',
+                alcaldia: 'Alcaldia',
+                email: 'correo@dominio.com',
+                permiso_administrador: 'Nel'
+            },
             {
+                _id:'23e1ed431rf4eff3',
                 'rol': 'JA',
                 nombres: 'Gumercindo',
                 apellido_paterno: 'Perez',
@@ -625,63 +257,103 @@ module.exports = {
         mockData: [{    
             estado:'Enviada',
             '_id':'sj34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'si34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sh34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Poda',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sg34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sf34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Poda',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'se34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sd34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Poda',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sc34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sb34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         },
         {
             estado:'Enviada',
             '_id':'sa34344cdfg43nh4bdcs23243',
-            'tipo_servicio':'Derribo',
-            tipo:'Vía pública'
+            'tipo_de_servicio':'Derribo',
+            modalidad:'Vía pública'
         }],
         
+    },
+    consultaSolicitud: {
+        _id:"id",
+        folio:"folio",
+        estado:"estado",
+        nombres:"Nombres",
+        apellido_paterno:"Apellido paterno",
+        apellido_materno:"Apellido materno",
+        email:"correo@electronico.com",
+        numero_telefono:"nuemro de telefono",
+        calle:"calle del ciudadno",
+        numero_exterior:"numero exterior",
+        numero_interior:"numero interior",
+        codigo_postal:"codigo postal",
+        colonia:"colonia",
+        alcaldia:"alcaldia",
+        documento_de_identificacion_oficial :"url de identificacion oficial",
+        tipo_de_servicio:" tipo de servicio",
+        calle_arbol:"calle del arbol",
+        colonia_arbol:"colonia del arbol",
+        alcaldia_arbol:"alcaldia del arbol",
+        calle_adyacente_1:"calle adyacente 1",
+        calle_adyacente_2:"calle adyacente 2",
+        referencias:"Referencias",
+        motivos:"Motivos",
+        fotos:["url 1","url 2","url 3","url 4","url 5",],
+        modalidad:"via-publica",
+        privada : {
+            tipo_privada			:"construccion",
+            comprobante_domicilio	:"url comprobante de domicilio",
+            comprobante_propiedad	:"url comprobante de propiedad",
+            construccion:{
+                documento_registro :"url documento de registro",
+                documento_planos	:"url documento de los planos",
+                documento_declaratoria	:"documento declaratorios",
+            },        
+            riesgo : {
+                documento_dictamen_riesgo :"url dictamenten de riesgo",
+            },
+        },
     },
 };

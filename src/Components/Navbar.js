@@ -1,8 +1,30 @@
 import logo from '../img/logocdmx.png'
 import "./Navbar.css"
+import payload from '../utils/payload';
 import { Link } from 'react-router-dom';
+import Button from '../Components/Button';
 
-export default function Navbar({type}){
+export default function Navbar(){
+    const p = payload();
+    const selectSolicitudes = (rol) => {
+        switch(rol) {
+            case 'ROP':
+                return <li className="nav-item">
+                            <Link className="nav-link" to="/oficialiaPartes">Solicitudes</Link>
+                    </li>;
+            
+            case 'JA':
+                return <li className="nav-item">
+                <Link className="nav-link" to="/jefeArea">Solicitudes</Link>
+            </li>
+            case 'DI':
+                return <li className="nav-item">
+                <Link className="nav-link" to="/dictaminador">Solicitudes</Link>
+            </li>
+            default:
+                return "";
+        }
+    };
     return(
         <nav className="navbar bar">
             <div className="container-fluid conter">
@@ -14,19 +36,28 @@ export default function Navbar({type}){
                     </div>
                 
                 <div className="col-8 title h-100">
-                    {type === "ciudadano" ? <div className="col-12 title d-flex justify-content-center h-100">
-                        <h4></h4>
+                    { !p ? <div className="col-12 title d-flex justify-content-center h-100">
+                        <h4>Administración de solicitudes de poda</h4>
                     </div> :  
-                    <div>
+                    <div className="d-flex justify-content-around">
                         <ul className="nav">
-                            <li className="nav-item">
-                                {/* Agregar el sin rol de el to para solucitudes */}
-                                <Link className="nav-link" to="/oficialiaPartes">Solicitudes</Link>
-                            </li>
-                            <li className="nav-item">
-                                {/* Agregar el sin rol de el to para solucitudes */}
-                                <Link className="nav-link" to="/oficialiaPartes">Usuarios</Link>
-                            </li>
+                        <li className="nav-item"><Link className="nav-link" to="/">
+                        {p.sub.rol}
+                        </Link></li>
+                            {
+                                selectSolicitudes(p.sub.rol)
+                            }
+                            {p.sub.permiso_administrador ? <li className="nav-item">
+                                <Link className="nav-link" to="/Admin">Usuarios</Link>
+                            </li>:''}
+                            
+                        </ul>
+                        <ul className="nav">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/logout">
+                            Cerrar Sesión
+                        </Link>
+                        </li>
                         </ul>
                     </div>
                     }

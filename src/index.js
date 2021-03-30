@@ -4,39 +4,52 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Home from './Views/Home';
 import Page404 from './Views/Page404';
-import Solicitud from './Views/Solicitud';
 import Login from './Views/Login';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Profile from './Views/Profile';
+import DI from './Views/Dictator';
 import OP from './Views/PartsOfficer';
 import JA from './Views/AreaBoss';
 import Admin from './Views/Admin';
+import { Redirect } from 'react-router-dom';
+import SolicitudDetail from './Views/SolicitudDetail';
+import User from './Views/User';
+
+const Logout = () => {
+  window.localStorage.removeItem('token');
+  return <Redirect to="/"/>;
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route exact path="/login">
           <Login/>
         </Route>
-        <Route path="/perfil">
+        <Route exact path="/perfil">
           <Profile/>
         </Route>
-        <Route path="/oficialiaPartes">
+        <Route exact path="/oficialiaPartes">
           <OP/>
         </Route>
-        <Route path="/jefeArea">
+        <Route exact path="/jefeArea">
           <JA/>
         </Route>
-        <Route path="/admin">
+        <Route exact path="/dictaminador">
+          <DI/>
+        </Route>
+        <Route exact path="/admin">
           <Admin/>
         </Route>
-        <Route exact path="/solicitud/:type" component={Solicitud}/>
-        <Route ath="*">
+        <Route exact path="/solicitud/:id" component={SolicitudDetail}/>
+        <Route exact path="/user/:id" component={User}/>
+        <Route exact path="/logout" component={Logout}/>
+        <Route path="*">
           <Page404/>
         </Route>
       </Switch>

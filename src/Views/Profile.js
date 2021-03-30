@@ -1,12 +1,12 @@
 import Table from '../Components/Table';
 import { tables } from '../utils/const';
-
 import Layout from '../Components/Layout';
 import Card from '../Components/Card-blank';
 import Button from '../Components/Button';
 import { useHistory } from "react-router-dom";
+import protect from '../utils/protect';
 
-export default function Profile() {
+function Profile() {
     const history = useHistory();
     return(
         <Layout>
@@ -28,10 +28,12 @@ export default function Profile() {
                         <br></br>
                     </div>
                     </Card>
-                    <Button styling="success" type="button" click={() => history.push('/login')} text="Cerrar Sesión"></Button>
+                    <Button styling="success" type="button" click={() => history.push('/logout')} text="Cerrar Sesión"></Button>
                 </div>
                 <div className="col-12 col-lg-7 px-3"><Table cols={tables.estadoSolicitud} datos={tables.mockData}></Table></div>
             </div>
         </Layout>
     );
 }
+
+export default protect(Profile);

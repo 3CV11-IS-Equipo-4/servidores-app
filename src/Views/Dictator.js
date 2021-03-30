@@ -1,11 +1,11 @@
 import Table from '../Components/Table';
 import { tables } from '../utils/const';
-import Layout from '../Components/Layout';
 import protect from '../utils/protect';
+import Layout from '../Components/Layout';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function AreaBoss() {
+function Dictator() {
     const [data, setData] = useState(null);
     const aceptar = ({_id}) => {
         const token = window.localStorage.getItem('token')
@@ -54,21 +54,16 @@ function AreaBoss() {
                 alert( error.response.data.error);
             });
     };
-
     useEffect(() => {
         getData();
-    }, []);
-    return(
+    }, []);    return(
         <Layout>
             <div className="d-flex justify-content-between w-100 h-100">
-                {
-                    data ?
-                    <Table cols={tables.jefeArea} datos={data} aceptar={aceptar} denegar={denegar}></Table>
-                    : 'No hay solicitudes por revisar'
-                }
+                {data ? <div className="d-flex justify-content-between w-100 h-100">
+                <Table cols={tables.dictaminador} datos={data} aceptar={aceptar} denegar={denegar}></Table>
+            </div>: ''}
             </div>
         </Layout>
     );
 }
-
-export default protect(AreaBoss);
+export default protect(Dictator);
