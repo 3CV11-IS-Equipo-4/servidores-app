@@ -8,7 +8,7 @@ function Home() {
     const p = payload();
 
     return(
-        <Layout head="Poda de árboles">
+        <Layout head="Administración de poda de árboles">
             <div className="d-flex w-100 justify-content-around">
                 { p ?
                 <Card className="m-5" styling="flex-row">
