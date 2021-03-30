@@ -3,7 +3,6 @@ import protect from '../utils/protect';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import { consultaSolicitud } from '../utils/const'
 
 function SolicitudDetail() {
     const { id } = useParams();
@@ -19,7 +18,6 @@ function SolicitudDetail() {
             .then(({data, status})=>{
                 if(status === 200) {
                     setData(data);
-                    console.log('data', data)
                 }
             });
     }, []);
@@ -74,7 +72,7 @@ function SolicitudDetail() {
                             <div className="d-flex justify-content-between flex-wrap">
                                 {data.fotos.map(item => 
                                     <div className="col-4">
-                                        <img src={item} className="img-fluid"/></div>
+                                        <img src={item} alt="" key={`img${item}`} className="img-fluid"/></div>
                                     )}
                             </div>
                         </div>
@@ -87,12 +85,12 @@ function SolicitudDetail() {
                             <div className="col-12">Comprobante de domicilio</div>
                             {data.privada.comprobante_domicilio.map(item => 
                                     <div className="col-4">
-                                        <img src={item} className="img-fluid"/></div>
+                                        <img src={item}  alt="" key={`img${item}`} className="img-fluid"/></div>
                                     )}
                             <div className="col-12">Comprobante de propiedad</div>
                             {data.privada.comprobante_propiedad.map(item => 
                                     <div className="col-4">
-                                        <img src={item} className="img-fluid"/></div>
+                                        <img src={item}  alt="" key={`img${item}`} className="img-fluid"/></div>
                                     )}
                         </div>
                         </div>
@@ -103,17 +101,17 @@ function SolicitudDetail() {
                                     <div className="col-8">Documento de registro</div>
                                     {data.privada.construccion.documento_registro.map(item => 
                                     <div className="col-4">
-                                        <img src={item} className="img-fluid"/></div>
+                                        <img src={item}  alt="" key={`img${item}`} className="img-fluid"/></div>
                                     )}
                                     <div className="col-8">Documento de planos</div>
                                     {data.privada.construccion.documento_planos.map(item => 
                                     <div className="col-4">
-                                        <img src={item} className="img-fluid"/></div>
+                                        <img src={item}  alt="" key={`img${item}`} className="img-fluid"/></div>
                                     )}
                                     <div className="col-8">Documento de declaratoria</div>
                                     {data.privada.construccion.documento_declaratoria.map(item => 
                                     <div className="col-4">
-                                        <img src={item} className="img-fluid"/></div>
+                                        <img src={item}  alt="" key={`img${item}`} className="img-fluid"/></div>
                                     )}
                                 </div>
                             </div>
@@ -123,7 +121,13 @@ function SolicitudDetail() {
                                 <h3 className="mb-3">Datos de solicitud por riesgo</h3>
                                 <div className="d-flex justify-content-between flex-wrap">
                                     <div className="col-8">Documento de dictamen de riesgo</div>
-                                    <div className="col-8"><img src={data.privada.riesgo.documento_dictamen_riesgo} className="img-fluid"/></div>
+                                    
+                                    <div className="col-8">
+                                    {data.privada.riesgo.documento_dictamen_riesgo.map(item => 
+                                        <div className="col-4">
+                                        <img src={item}  alt="" key={`img${item}`} className="img-fluid"/></div>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         : ""}

@@ -1,14 +1,12 @@
 import Table from '../Components/Table';
 import { tables } from '../utils/const';
 import Layout from '../Components/Layout';
-import { useHistory } from "react-router-dom";
 import protect from '../utils/protect';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import React from 'react';
 
 function Admin() {
-    const history = useHistory();
     const [data, setData] = useState(null);
 
     const permisoUser = ({_id,permiso_administrador}) => {

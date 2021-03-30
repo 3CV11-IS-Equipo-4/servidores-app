@@ -2,7 +2,6 @@ import logo from '../img/logocdmx.png'
 import "./Navbar.css"
 import payload from '../utils/payload';
 import { Link } from 'react-router-dom';
-import Button from '../Components/Button';
 
 export default function Navbar(){
     const p = payload();

@@ -18,7 +18,7 @@ function Home() {
                 </Card> :
                 <Link to="/login">
                     <Card className="m-5">
-                    <img src={img_pi} width="400"></img>
+                    <img src={img_pi} alt='inicio' width="400"></img>
                     </Card>
                 </Link>}
             </div>
